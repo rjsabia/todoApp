@@ -31,8 +31,12 @@ class App extends Component {
     this.setState({todos: this.state.todos})
   }
 
-  deleteTodo(){
+  deleteTodo(id){
+    console.log(id)
 
+    const todos = this.state.todos.filter(todo => todo.id !== id)
+
+    this.setState({todos})
   }
 
   render() {
@@ -40,7 +44,7 @@ class App extends Component {
       <div className="App">
         
         <AddTodo addTodo={this.addTodo} />
-        <List todos={this.state.todos} />
+        <List todos={this.state.todos} deleteTodo={this.deleteTodo} />
 
       </div>
     );
