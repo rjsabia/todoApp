@@ -6,7 +6,7 @@ const header = () => (
 
 	<div className="header-bg">
 		<div className="header-image">
-			<img className="the-image" src={Remember} alt="header image" />
+			<img className="the-image" src={Remember} alt="header pic saying remember" />
 		</div>
 	</div>
 )

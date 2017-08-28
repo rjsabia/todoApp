@@ -13,7 +13,7 @@ const AddTodo = ({ addTodo }) => {
 
 			event.target.userInput.value = ''
 		}}>
-			<input type="text" name="userInput" />
+			<input type="text" name="userInput" placeholder="Enter a todo item" />
 			<button>Add</button>
 		</form>
 

@@ -3,6 +3,8 @@ import './App.css';
 import List from './components/list'
 import AddTodo from './components/AddTodo'
 import HeaderTodo from './components/HeaderTodo.js'
+import Intro from './components/Intro'
+import AddName from './components/AddName'
 
 class App extends Component {
   
@@ -10,12 +12,14 @@ class App extends Component {
     super()
 
     this.state = {
-      todos: []
+      todos: [],
+      userName: ''
 
     }
 
     this.addTodo = this.addTodo.bind(this)
     this.deleteTodo = this.deleteTodo.bind(this)
+    this.addUsername = this.addUsername.bind(this)
   }
 
   addTodo(text){
@@ -40,11 +44,25 @@ class App extends Component {
     this.setState({ todos })
   }
 
+  addUsername(name){
+      console.log(name)
+
+      const theName = {
+        name
+      }
+
+      this.state.userName = theName
+
+      this.setState({userName: this.state.userName})
+  }
+
   render() {
     return (
       <div className="App">
 
-        <HeaderTodo />  
+        <HeaderTodo /> 
+        <Intro userName={this.state.userName} />
+        <AddName addUsername={this.addUsername} userName={this.state.userName} />
         <AddTodo addTodo={this.addTodo} />
         <List todos={this.state.todos} deleteTodo={this.deleteTodo} />
 
